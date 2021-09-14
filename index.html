@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<link rel='stylesheet' href='./style.css'>
+<title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+    <form class="container">
+        <div class='billContainer'>
+            <h2>Bill</h2>
+            <div class="amountContainer">
+                <img src='./images/dollar.svg' height='20px'>
+                <input id='bill' placeholder='0'/>
+            </div>
+        </div>
+        <div class='tipContainer'>
+            <h2>Select Tip %</h2>
+            <button id='5'>5%</button>
+            <button id='10'>10%</button>
+            <button id='15'>15%</button>
+            <button id='25'>25%</button>
+            <button id='50'>50%</button>
+            <input id='custom' placeholder='Custom'/>
+        </div>
+        <div class="peopleContainer">
+            <h2>Number of People</h2>
+            <div class="peopleCountContainer">
+                <img src='./images/user.svg' height='20px'/>
+                <input id='people' placeholder='0' type='number'/>
+            </div>
+            <input type='submit' value='Calcular'/>
+        </div>
+        <div class='result'>
+            <div class="tipAmount">
+                <h2>Tip Amount per Person</h2>
+                <div class='amount'>
+                    <img src='./images/dollar.svg' height='20px'/>
+                    <input id='tipAmount' placeholder='0' readonly/>
+                </div>
+            </div>
+            <div class="total">
+                <h2>Total per Person (Only Bill)</h2>
+                <div class='amount'>
+                    <img src='./images/dollar.svg' height='20px'/>
+                    <input id='total' placeholder='0' readonly/>
+                </div>
+            </div>
+            <div>
+                <h2>Total</h2>
+                <div class='amount'>
+                    <img src='./images/dollar.svg' height='20px'/>
+                    <input id='totalBill' placeholder='0' readonly/>
+                </div>
+            </div>
+        </div>
+        <button class='reset' type='submit'>Reset</button>
+    </form>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        oded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src='./script.js'></script>
+</body>
+</html>
