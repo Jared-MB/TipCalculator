@@ -64,7 +64,7 @@
     input::placeholder {
         color: #aaa;
     }
-    input[value=Calcular]{
+    input[value=CALCULAR]{
         margin-left: 15px;
         padding: 0 15px;
         cursor: pointer;
@@ -115,7 +115,7 @@
         border-radius: 4px;
         background-color: #616161
     }
-    .peopleCountContainer:hover, .amountContainer:hover,input[value='Calcular']:hover, button:hover, #custom:hover {
+    .peopleCountContainer:hover, .amountContainer:hover,input[value='CALCULAR']:hover, button:hover, #custom:hover {
         background-color: #818181
     }
     button, #custom{
@@ -126,4 +126,64 @@
         color: #fff
     }
     
+}
+@media only screen and (max-width: 1023px){
+    body{
+        background-color: #313131;
+        padding: 3vw;
+    }
+    h2 {
+        color: #fff;
+        font-weight: 400;
+    }
+    .amountContainer, .peopleCountContainer, .amount {
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        background-color: #616161;
+        width: fit-content;
+        padding: 5px;
+    }
+    .amountContainer input, .peopleCountContainer input, .amount input {
+        background-color: transparent;
+        border: none;
+        text-align: end;
+        color: #fff;
+    }
+    .amountContainer input::placeholder, .peopleCountContainer input::placeholder, .amount input::placeholder, .tipContainer input::placeholder {
+        color: #aaa;
+    }
+    .tipContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .tipContainer h2 {
+        flex-basis: 100%;
+    }
+    .tipContainer button, .tipContainer input, body > form > div.peopleContainer > input[type=submit], body > form > button {
+        border: none;background-color: #616161;
+        border-radius: 3px;
+        color: #aaa;
+        width: 30%;
+        height: 5vh;
+        text-align: center;
+        font-size: 100%;
+        margin-top: 10px
+    }
+    .tipContainer button {
+        color: #fff;
+    }
+    body > form > div.peopleContainer > input[type=submit], body > form > button{
+        margin-top: 20px ;
+        color: #fff;
+        width: 80%;
+    }
+}
+.attribution {
+    color: #fff;
+}
+.attribution a {
+    color: rgb(11, 83, 143);
+    text-decoration: none;
 }

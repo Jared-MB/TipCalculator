@@ -3,15 +3,18 @@ const calc = document.querySelector("body > form.container > div.peopleContainer
 calc.addEventListener('click', e => {
     billPerPerson = billPerson(getBill(), getPeople());
     tipPerPerson = getTip(tipAmount, getPeople(), getBill());
-
+    
     const totalPerPerson = document.getElementById('total');
-    totalPerPerson.value = billPerPerson;
-
     const tipTotal = document.getElementById('tipAmount');
-    tipTotal.value = tipPerPerson;
-
     const totalBill = document.getElementById('totalBill');
+    
+    totalPerPerson.value = billPerPerson;
+    tipTotal.value = tipPerPerson;
     totalBill.value = tipPerPerson + billPerPerson
+
+    countB = 0;
+    countP = 0;
+    countBA = 0;
 
     e.preventDefault();
 })
@@ -21,13 +24,19 @@ const billPerson = (bill, person) => {
     return result
 }
 
+let countB = 0;
+let countBA = 0;
+let countP = 0;
+
 const getBill = () => {
     const bill = document.getElementById('bill').value;
-    if(isNaN(bill)){
-        alert('El valor debe ser una cantidad numérica')
+    if(isNaN(bill) && countB == 0){
+        alert('El valor debe ser una cantidad numérica');
+        countB++
     }
-    else if(Number(bill) < 0){
+    else if(Number(bill) < 0 && countBA == 0){
         alert('Debe ser un valor positivo')
+        countBA++
     }
     else return bill
 }
@@ -35,10 +44,11 @@ const getBill = () => {
 const getPeople = () => {
     const people = document.getElementById('people').value;
     if (isNaN(people)){
-        alert('¿Que acabas de hacer? Por favor regresa el valor del input a numeros para continuar')
+        alert('¿Que acabas de hacer? Por favor regresa el valor del input a numeros para continuar');
     }
-    else if (Number(people) <= 0){
-        alert('Al menos debe pagar la cuenta una persona, ¿no te parece razonable?')
+    else if (Number(people) <= 0 && countP == 0){
+        alert('Al menos debe pagar la cuenta una persona, ¿no te parece razonable?');
+        countP++;
     }
     else return people
 }
