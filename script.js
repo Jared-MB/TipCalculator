@@ -16,6 +16,7 @@ calc.addEventListener('click', e => {
     countP = 0;
     countBA = 0;
 
+    button.classList.remove('tip');
     e.preventDefault();
 })
 
@@ -60,16 +61,29 @@ const getTip = (tip, people, bill) => {
 
 const tipContainer = document.querySelector('.tipContainer');
 let tipAmount = 0;
+let button = null;
 tipContainer.addEventListener('click', e => {
-    if (isNaN(e.path[0].id)){
+    if (button == null && !isNaN(e.path[0].id)){
+        button = e.path[0];
     }
-    else {
+    else if (!isNaN(e.path[0].id)){ 
+        button.classList.remove('tip');
+        button = e.path[0]
+    }
+    if (!isNaN(e.path[0].id)){
+        e.path[0].classList.add('tip')
         tipAmount = (e.path[0].id)/100
+    }
+    if (tipContainer.classList.contains('tip')){
+        tipContainer.classList.remove('tip')
     }
     e.preventDefault();
 })
 
 const custom = document.getElementById('custom');
 custom.addEventListener('change', () => {
+    if (button.classList.contains('tip')) {
+        button.classList.remove('tip')
+    }
     tipAmount = custom.value/100
 })
