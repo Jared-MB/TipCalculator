@@ -1,6 +1,7 @@
 const calc = document.querySelector("body > form.container > div.peopleContainer > input[type=submit]")
 
 calc.addEventListener('click', e => {
+    e.preventDefault();
     billPerPerson = billPerson(getBill(), getPeople());
     tipPerPerson = getTip(tipAmount, getPeople(), getBill());
     
@@ -17,7 +18,6 @@ calc.addEventListener('click', e => {
     countBA = 0;
 
     button.classList.remove('tip');
-    e.preventDefault();
 })
 
 const billPerson = (bill, person) => {
